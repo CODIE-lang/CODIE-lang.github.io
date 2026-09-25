@@ -9,7 +9,7 @@
 (function initLoader() {
   const loaderHTML = `
     <div class="loader-overlay" id="loaderOverlay">
-      <div class="loader-logo">&lt;Alex /&gt;</div>
+      <div class="loader-logo">&lt;Ernest John /&gt;</div>
       <div class="loader-bar"><div class="loader-fill" id="loaderFill"></div></div>
     </div>`;
   document.body.insertAdjacentHTML('afterbegin', loaderHTML);
@@ -460,7 +460,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
    RIPPLE EFFECT ON BUTTONS
    ================================================ */
 document.querySelectorAll('.btn').forEach(btn => {
-  btn.addEventListener('click', function(e) {
+  btn.addEventListener('click', function (e) {
     const rect = this.getBoundingClientRect();
     const ripple = document.createElement('span');
     ripple.classList.add('ripple-effect');
@@ -478,7 +478,7 @@ document.querySelectorAll('.btn').forEach(btn => {
 const hamburger = document.getElementById('hamburger');
 const navLinksEl = document.getElementById('navLinks');
 if (hamburger && navLinksEl) {
-  hamburger.addEventListener('click', function() {
+  hamburger.addEventListener('click', function () {
     const isOpen = navLinksEl.classList.contains('open');
     const spans = this.querySelectorAll('span');
     if (isOpen) {
