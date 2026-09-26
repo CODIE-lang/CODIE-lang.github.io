@@ -149,12 +149,12 @@ if (backToTop) {
   if (!target) return;
 
   const words = [
-    'Full-Stack Developer',
-    'UI/UX Enthusiast',
-    'Open Source Contributor',
-    'Problem Solver',
-    'React Developer',
-    'Python Engineer',
+    'Frontend Developer',
+    'UI Designer',
+    'Virtual Assistant',
+    'Data Encoder',
+    'Web Designer',
+    'IT Graduate',
   ];
 
   let wordIndex = 0;
