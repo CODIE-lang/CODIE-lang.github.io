@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ernest John Coritico – Resume</title>
+  <style>
+    /* ===== ATS-FRIENDLY RESUME STYLES ===== */
+    @page {
+      size: letter portrait;
+      margin: 0.5in;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Calibri', 'Arial', Helvetica, sans-serif;
+      font-size: 10.5pt;
+      line-height: 1.45;
+      color: #111111;
+      background: #f4f4f7;
+    }
+
+    .page {
+      max-width: 8.5in;
+      margin: 20px auto;
+      background: #ffffff;
+      padding: 0.5in 0.65in;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    }
+
+    /* ── HEADER ── */
+    .resume-header {
+      border-bottom: 2px solid #1a1a2e;
+      padding-bottom: 10px;
+      margin-bottom: 14px;
+    }
+
+    .resume-name {
+      font-size: 24pt;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      color: #1a1a2e;
+      text-transform: uppercase;
+      line-height: 1.1;
+    }
+
+    .resume-title {
+      font-size: 11.5pt;
+      font-weight: 600;
+      color: #333333;
+      margin-top: 4px;
+    }
+
+    .resume-contact {
+      margin-top: 6px;
+      font-size: 9.5pt;
+      color: #222222;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 4px 14px;
+    }
+
+    .resume-contact span {
+      display: inline-flex;
+      align-items: center;
+    }
+
+    /* ── SECTIONS ── */
+    .section {
+      margin-bottom: 13px;
+    }
+
+    .section-title {
+      font-size: 11pt;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: #1a1a2e;
+      border-bottom: 1.5px solid #1a1a2e;
+      padding-bottom: 2px;
+      margin-bottom: 7px;
+    }
+
+    /* ── ENTRIES ── */
+    .entry {
+      margin-bottom: 10px;
+    }
+
+    .entry:last-child {
+      margin-bottom: 0;
+    }
+
+    .entry-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      flex-wrap: wrap;
+    }
+
+    .entry-title {
+      font-size: 10.5pt;
+      font-weight: 700;
+      color: #1a1a2e;
+    }
+
+    .entry-date {
+      font-size: 9.5pt;
+      color: #444444;
+      font-style: italic;
+      white-space: nowrap;
+    }
+
+    .entry-org {
+      font-size: 10pt;
+      font-weight: 500;
+      color: #2c3e50;
+      margin-bottom: 3px;
+    }
+
+    .entry ul {
+      padding-left: 17px;
+      margin-top: 3px;
+    }
+
+    .entry ul li {
+      font-size: 10pt;
+      color: #222222;
+      margin-bottom: 2px;
+    }
+
+    /* ── SKILLS ── */
+    .skills-block {
+      font-size: 10pt;
+      color: #222222;
+      line-height: 1.5;
+    }
+
+    .skills-block p {
+      margin-bottom: 4px;
+    }
+
+    .skills-block p:last-child {
+      margin-bottom: 0;
+    }
+
+    .skill-category {
+      font-weight: 700;
+      color: #1a1a2e;
+    }
+
+    .summary-text {
+      font-size: 10pt;
+      color: #222222;
+      line-height: 1.5;
+      text-align: justify;
+    }
+
+    /* ── PRINT MEDIA RULES ── */
+    @media print {
+      body {
+        background: #ffffff !important;
+        font-size: 10pt;
+      }
+      .page {
+        margin: 0 !important;
+        padding: 0 !important;
+        box-shadow: none !important;
+        max-width: 100% !important;
+        width: 100% !important;
+      }
+      .no-print {
+        display: none !important;
+      }
+    }
+
+    .print-bar {
+      text-align: center;
+      padding: 12px;
+      background: #1a1a2e;
+    }
+
+    .print-btn {
+      display: inline-block;
+      padding: 8px 22px;
+      background: #6c63ff;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    .print-btn:hover {
+      background: #5a52e0;
+    }
+
+    .print-hint {
+      color: #ccc;
+      font-size: 11px;
+      margin-top: 4px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Screen Only Toolbar -->
+  <div class="print-bar no-print">
+    <button class="print-btn" onclick="window.print()">🖨️ Print / Save as PDF</button>
+    <div class="print-hint">Ctrl+P → Set Destination to "Save as PDF" → Click Save</div>
+  </div>
+
+  <div class="page">
+
+    <!-- ── HEADER ── -->
+    <header class="resume-header">
+      <h1 class="resume-name">Ernest John Coritico</h1>
+      <div class="resume-title">Frontend Developer &amp; IT Graduate | Virtual Assistant &amp; Data Specialist</div>
+      <div class="resume-contact">
+        <span>📧 ernestcortz13@gmail.com</span>
+        <span>📞 +63 992-490-8380</span>
+        <span>📍 Don Carlos Sur, Bukidnon, Philippines</span>
+        <span>🔗 linkedin.com/in/ernest-john-coritico-a6823038a</span>
+        <span>💻 github.com/CODIE-lang</span>
+      </div>
+    </header>
+
+    <!-- ── PROFESSIONAL SUMMARY ── -->
+    <section class="section">
+      <h2 class="section-title">Professional Summary</h2>
+      <p class="summary-text">
+        Detail-oriented and adaptable Bachelor of Science in Information Technology graduate from Central Mindanao University with hands-on experience in frontend web development, PHP/Laravel application architecture, database administration, and UI prototyping. Proven track record of developing functional internal systems, including an automated employee Kiosk ID system during a 3-month internship at M. Montesclaros Enterprises Inc., and leading technical workshops in Microsoft Excel. Skilled in administrative tasks, data encoding, and virtual assistance. Committed to delivering reliable, high-quality technical and administrative solutions for forward-thinking organizations and clients.
+      </p>
+    </section>
+
+    <!-- ── TECHNICAL & PROFESSIONAL SKILLS ── -->
+    <section class="section">
+      <h2 class="section-title">Technical &amp; Professional Skills</h2>
+      <div class="skills-block">
+        <p>
+          <span class="skill-category">Frontend Web Development: </span>
+          HTML5, CSS3, JavaScript (ES6+), Bootstrap, Responsive Web Design, Cross-Browser Compatibility, UI/UX Prototyping
+        </p>
+        <p>
+          <span class="skill-category">Backend &amp; Databases: </span>
+          PHP, Laravel Framework, RESTful APIs, MySQL, Navicat, Database Schema Design &amp; Administration
+        </p>
+        <p>
+          <span class="skill-category">Tools &amp; Version Control: </span>
+          Git, GitHub, Figma, Canva, VS Code
+        </p>
+        <p>
+          <span class="skill-category">Productivity &amp; Office Suites: </span>
+          Microsoft Excel (Advanced Formulas &amp; Data Management), Word, PowerPoint, Google Workspace (Docs, Sheets, Slides)
+        </p>
+        <p>
+          <span class="skill-category">Virtual Assistance &amp; Operations: </span>
+          Data Encoding, Inventory Documentation, Records Management, Technical Training Facilitation, Customer/Admin Support
+        </p>
+      </div>
+    </section>
+
+    <!-- ── WORK EXPERIENCE ── -->
+    <section class="section">
+      <h2 class="section-title">Work Experience</h2>
+
+      <!-- OJT -->
+      <div class="entry">
+        <div class="entry-header">
+          <span class="entry-title">IT Intern / On-the-Job Trainee</span>
+          <span class="entry-date">February 2025 – May 2025</span>
+        </div>
+        <div class="entry-org">M. Montesclaros Enterprises Inc. | Valencia City, Bukidnon, Philippines</div>
+        <ul>
+          <li>Engineered an automated employee Kiosk ID system, significantly accelerating credential processing speed for incoming and existing personnel.</li>
+          <li>Maintained comprehensive inventory logs of IT hardware, office equipment, and company assets with strict data accuracy.</li>
+          <li>Supported internal staff with hardware troubleshooting, operating system updates, and network diagnostics.</li>
+        </ul>
+      </div>
+
+      <!-- Training Facilitator -->
+      <div class="entry">
+        <div class="entry-header">
+          <span class="entry-title">Technical Training Facilitator – Microsoft Excel</span>
+          <span class="entry-date">January 2025</span>
+        </div>
+        <div class="entry-org">M. Montesclaros Farms Inc. in partnership with Central Mindanao University | Valencia City, Bukidnon</div>
+        <ul>
+          <li>Facilitated the Office Productivity Workshop Series focusing on intermediate-to-advanced Microsoft Excel techniques.</li>
+          <li>Guided corporate staff and attendees through practical exercises including spreadsheet formulas, data filtering, and automated reports.</li>
+        </ul>
+      </div>
+
+    </section>
+
+    <!-- ── KEY PROJECTS ── -->
+    <section class="section">
+      <h2 class="section-title">Key Projects</h2>
+
+      <!-- Capstone -->
+      <div class="entry">
+        <div class="entry-header">
+          <span class="entry-title">Web-Based Property Management System (Capstone Project)</span>
+          <span class="entry-date">August 2026</span>
+        </div>
+        <div class="entry-org">Client: Orowide Properties Corporation</div>
+        <ul>
+          <li>Architected and deployed a full-stack property management platform featuring user role permissions, property listings, reporting modules, and mapping capabilities.</li>
+          <li>Integrated a robust backend with PHP Laravel and MySQL, styled with responsive Bootstrap interfaces.</li>
+        </ul>
+      </div>
+
+      <!-- Kiosk -->
+      <div class="entry">
+        <div class="entry-header">
+          <span class="entry-title">Employee Kiosk ID System</span>
+          <span class="entry-date">February 2025 – May 2025</span>
+        </div>
+        <div class="entry-org">Deployment: M. Montesclaros Enterprises Inc.</div>
+        <ul>
+          <li>Designed a self-service kiosk workflow enabling rapid credential verification and identification issuance.</li>
+        </ul>
+      </div>
+
+    </section>
+
+    <!-- ── EDUCATION ── -->
+    <section class="section">
+      <h2 class="section-title">Education</h2>
+      <div class="entry">
+        <div class="entry-header">
+          <span class="entry-title">Bachelor of Science in Information Technology (BSIT)</span>
+          <span class="entry-date">Graduated: 2026</span>
+        </div>
+        <div class="entry-org">Central Mindanao University (CMU) | Musuan, Maramag, Bukidnon, Philippines</div>
+        <ul>
+          <li>Core Coursework: Web Development, Database Management Systems, Systems Analysis &amp; Design, Network Administration, Software Engineering.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ── CERTIFICATIONS & RECOGNITION ── -->
+    <section class="section">
+      <h2 class="section-title">Certifications &amp; Training</h2>
+      <div class="entry">
+        <ul>
+          <li>Certificate of Recognition – Training Facilitator, Office Productivity Workshop Series: Microsoft Excel Training (Central Mindanao University &amp; M. Montesclaros Farms Inc., Jan 2025)</li>
+          <li>Certificate of Completion – On-the-Job Training Program (M. Montesclaros Enterprises Inc., May 2025)</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ── KEY STRENGTHS & LANGUAGES ── -->
+    <section class="section">
+      <h2 class="section-title">Core Competencies &amp; Languages</h2>
+      <div class="skills-block">
+        <p>
+          <span class="skill-category">Key Strengths: </span>
+          Attention to Detail, Fast Learner, Problem Solving, Proactive Communication, Time Management, Team Collaboration
+        </p>
+        <p>
+          <span class="skill-category">Languages: </span>
+          Filipino / Tagalog (Native), English (Professional Working Proficiency), Bisaya / Cebuano (Fluent)
+        </p>
+      </div>
+    </section>
+
+  </div>
+
+</body>
+</html>
