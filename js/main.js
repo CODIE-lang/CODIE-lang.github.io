@@ -427,19 +427,35 @@ if (backToTop) {
       submitBtn.disabled = true;
       submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
 
-      // Simulate API call
-      setTimeout(() => {
-        form.reset();
-        submitBtn.disabled = false;
-        submitBtn.innerHTML = '<i class="fas fa-paper-plane"></i> Send Message';
-        if (successMsg) {
-          successMsg.style.display = 'block';
-          setTimeout(() => { successMsg.style.display = 'none'; }, 5000);
-        }
-      }, 1800);
+      // Send via Formspree → delivered to ernestcortz13@gmail.com
+      const formData = new FormData(form);
+      fetch('https://formspree.io/f/xyezbaqn', {
+        method: 'POST',
+        body: formData,
+        headers: { 'Accept': 'application/json' }
+      })
+        .then(response => {
+          submitBtn.disabled = false;
+          submitBtn.innerHTML = '<i class="fas fa-paper-plane"></i> Send Message';
+          if (response.ok) {
+            form.reset();
+            if (successMsg) {
+              successMsg.style.display = 'block';
+              setTimeout(() => { successMsg.style.display = 'none'; }, 5000);
+            }
+          } else {
+            alert('Oops! There was a problem sending your message. Please try again.');
+          }
+        })
+        .catch(() => {
+          submitBtn.disabled = false;
+          submitBtn.innerHTML = '<i class="fas fa-paper-plane"></i> Send Message';
+          alert('Network error. Please check your connection and try again.');
+        });
     }
   });
 })();
+
 
 /* ================================================
    SMOOTH SCROLL FOR NAV LINKS
