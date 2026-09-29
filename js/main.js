@@ -61,7 +61,7 @@
   animate();
 
   // Hover effects
-  document.querySelectorAll('a, button, .btn, .project-card, .skill-card, .contact-card, .tab-btn, .filter-btn').forEach(el => {
+  document.querySelectorAll('a, button, .btn, .project-card, .skill-card, .contact-card, .tab-btn, .filter-btn, .about-image-wrap').forEach(el => {
     el.addEventListener('mouseenter', () => outline.classList.add('hovering'));
     el.addEventListener('mouseleave', () => outline.classList.remove('hovering'));
   });
@@ -360,6 +360,97 @@ if (backToTop) {
       card.style.transform = '';
       card.style.transition = 'transform 0.5s ease';
     });
+  });
+})();
+
+/* ================================================
+   ABOUT IMAGE 3D DEPTH EFFECT
+   ================================================ */
+(function initAboutDepthEffect() {
+  const wrap = document.getElementById('aboutDepthWrap');
+  const card = document.getElementById('aboutDepthCard');
+  const photo = document.getElementById('aboutPhoto');
+  const glare = document.getElementById('aboutDepthGlare');
+  const glow = document.getElementById('aboutDepthGlow');
+  const infoCard = document.getElementById('aboutInfoCard');
+
+  if (!wrap || !card || !photo) return;
+
+  let bounds;
+  let rafId = null;
+
+  function updateBounds() {
+    bounds = wrap.getBoundingClientRect();
+  }
+
+  wrap.addEventListener('mouseenter', () => {
+    updateBounds();
+    card.style.transition = 'transform 0.1s ease-out, box-shadow 0.3s ease';
+    photo.style.transition = 'transform 0.1s ease-out';
+    if (infoCard) infoCard.style.transition = 'transform 0.1s ease-out, box-shadow 0.3s ease';
+    if (glare) glare.style.opacity = '1';
+  });
+
+  window.addEventListener('resize', updateBounds, { passive: true });
+  window.addEventListener('scroll', updateBounds, { passive: true });
+
+  wrap.addEventListener('mousemove', (e) => {
+    if (!bounds) updateBounds();
+    if (rafId) cancelAnimationFrame(rafId);
+
+    rafId = requestAnimationFrame(() => {
+      const mouseX = e.clientX - bounds.left;
+      const mouseY = e.clientY - bounds.top;
+
+      const normX = Math.max(-1, Math.min(1, (mouseX / bounds.width - 0.5) * 2));
+      const normY = Math.max(-1, Math.min(1, (mouseY / bounds.height - 0.5) * 2));
+
+      // 3D angles
+      const rotateY = normX * 12;
+      const rotateX = -normY * 12;
+
+      // Card tilt in 3D
+      card.style.transform = `perspective(1000px) rotateX(${rotateX.toFixed(2)}deg) rotateY(${rotateY.toFixed(2)}deg) scale3d(1.02, 1.02, 1.02)`;
+
+      // Photo counter-parallax (depth separation from frame)
+      photo.style.transform = `scale(1.12) translate3d(${(-normX * 12).toFixed(1)}px, ${(-normY * 12).toFixed(1)}px, 0)`;
+
+      // Foreground floating info card
+      if (infoCard) {
+        infoCard.style.transform = `perspective(1000px) translate3d(${(normX * 10).toFixed(1)}px, ${(normY * 10).toFixed(1)}px, 45px) rotateX(${(rotateX * 0.5).toFixed(1)}deg) rotateY(${(rotateY * 0.5).toFixed(1)}deg)`;
+      }
+
+      // Specular glare follows mouse light source
+      if (glare) {
+        const glareX = Math.round((mouseX / bounds.width) * 100);
+        const glareY = Math.round((mouseY / bounds.height) * 100);
+        glare.style.background = `radial-gradient(circle at ${glareX}% ${glareY}%, rgba(255, 255, 255, 0.32) 0%, rgba(255, 255, 255, 0.06) 35%, transparent 70%)`;
+      }
+
+      // Ambient glow backdrop offset
+      if (glow) {
+        glow.style.transform = `translate3d(${(normX * 18).toFixed(1)}px, ${(normY * 18).toFixed(1)}px, -30px) scale(1.06)`;
+      }
+    });
+  });
+
+  wrap.addEventListener('mouseleave', () => {
+    if (rafId) cancelAnimationFrame(rafId);
+    card.style.transition = 'transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.5s ease';
+    photo.style.transition = 'transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1)';
+    if (infoCard) infoCard.style.transition = 'transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.5s ease';
+
+    card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)';
+    photo.style.transform = 'scale(1.08) translate3d(0, 0, 0)';
+    if (infoCard) {
+      infoCard.style.transform = 'translateZ(40px)';
+    }
+    if (glare) {
+      glare.style.opacity = '0';
+    }
+    if (glow) {
+      glow.style.transform = 'translate3d(0, 0, -30px) scale(1)';
+    }
   });
 })();
 
